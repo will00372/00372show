@@ -6,8 +6,8 @@
     <title>著名电影与评分</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f1f6;
             margin: 0;
             padding: 0;
             color: #333;
@@ -15,125 +15,172 @@
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 20px;
+            padding: 40px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .movie-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            gap: 30px;
         }
         .movie-item {
             background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             width: 280px;
-            margin: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .movie-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         .movie-item img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
+            height: 400px;
+            object-fit: cover;
         }
         .movie-title {
-            font-size: 1.4em;
+            font-size: 1.5em;
             font-weight: bold;
-            margin: 10px 0;
+            color: #34495e;
+            padding: 15px;
+            background-color: #ecf0f1;
+            text-align: center;
         }
         .movie-rating {
-            color: #f39c12;
             font-size: 1.2em;
-            margin: 10px 0;
+            color: #f39c12;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #ecf0f1;
         }
         .movie-description {
             font-size: 1em;
-            color: #555;
+            color: #7f8c8d;
+            padding: 15px;
+            background-color: #fff;
+            text-align: left;
         }
-        footer {
+        .movie-description p {
+            margin: 5px 0;
+        }
+        .footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
+            padding: 20px;
+            position: relative;
             bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>欢迎来到《著名电影与评分》网站</h1>
-    <p>探索经典电影和它们的评分。</p>
+    <h1>著名电影与评分</h1>
+    <p>探索经典电影与它们的评分，享受每一部影片的独特魅力。</p>
 </header>
 
 <section>
-    <h2>电影推荐榜单</h2>
-    <p><strong>以下是一些广受欢迎的电影及其评分。</strong></p>
-
+    <h2 style="text-align: center; font-size: 2em; color: #2c3e50; margin-bottom: 30px;">电影推荐榜单</h2>
     <div class="movie-list">
         <!-- 第一部电影 -->
         <div class="movie-item">
-            <img src="https://via.placeholder.com/280x400?text=电影1" alt="电影1">
+            <img src="https://via.placeholder.com/280x400?text=肖申克的救赎" alt="肖申克的救赎">
             <div class="movie-title"><mark>肖申克的救赎</mark></div>
-            <div class="movie-rating">
-                <em>评分：</em><strong>9.3/10</strong>
-            </div>
+            <div class="movie-rating">评分：<strong>9.3/10</strong></div>
             <div class="movie-description">
                 <p><abbr title="导演：弗兰克·德拉邦特">导演：</abbr><em>弗兰克·德拉邦特</em></p>
-                <p>这是一部讲述一名无辜囚犯在监狱中追寻自由的感人故事。</p>
+                <p>一名无辜的囚犯，在监狱中顽强求生，探索自由的力量。</p>
             </div>
         </div>
 
         <!-- 第二部电影 -->
         <div class="movie-item">
-            <img src="https://via.placeholder.com/280x400?text=电影2" alt="电影2">
+            <img src="https://via.placeholder.com/280x400?text=教父" alt="教父">
             <div class="movie-title"><mark>教父</mark></div>
-            <div class="movie-rating">
-                <em>评分：</em><strong>9.2/10</strong>
-            </div>
+            <div class="movie-rating">评分：<strong>9.2/10</strong></div>
             <div class="movie-description">
                 <p><abbr title="导演：弗朗西斯·福特·科波拉">导演：</abbr><em>弗朗西斯·福特·科波拉</em></p>
-                <p>讲述了黑帮家族的兴衰与父权的故事。</p>
+                <p>黑帮家族的权力斗争与父亲的权威。</p>
             </div>
         </div>
 
         <!-- 第三部电影 -->
         <div class="movie-item">
-            <img src="https://via.placeholder.com/280x400?text=电影3" alt="电影3">
+            <img src="https://via.placeholder.com/280x400?text=盗梦空间" alt="盗梦空间">
             <div class="movie-title"><mark>盗梦空间</mark></div>
-            <div class="movie-rating">
-                <em>评分：</em><strong>8.8/10</strong>
-            </div>
+            <div class="movie-rating">评分：<strong>8.8/10</strong></div>
             <div class="movie-description">
                 <p><abbr title="导演：克里斯托弗·诺兰">导演：</abbr><em>克里斯托弗·诺兰</em></p>
-                <p>这是一部充满脑洞的科幻电影，探讨梦境与现实的界限。</p>
+                <p>梦境与现实的界限何在？一场穿越梦境的冒险。</p>
             </div>
         </div>
 
         <!-- 第四部电影 -->
         <div class="movie-item">
-            <img src="https://via.placeholder.com/280x400?text=电影4" alt="电影4">
+            <img src="https://via.placeholder.com/280x400?text=星际穿越" alt="星际穿越">
             <div class="movie-title"><mark>星际穿越</mark></div>
-            <div class="movie-rating">
-                <em>评分：</em><strong>8.6/10</strong>
-            </div>
+            <div class="movie-rating">评分：<strong>8.6/10</strong></div>
             <div class="movie-description">
                 <p><abbr title="导演：克里斯托弗·诺兰">导演：</abbr><em>克里斯托弗·诺兰</em></p>
-                <p>在地球面临灭绝的情况下，一群宇航员展开星际冒险，寻找人类的新家园。</p>
+                <p>在地球将灭绝的危机下，宇航员寻找人类的未来。</p>
+            </div>
+        </div>
+
+        <!-- 第五部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=复仇者联盟" alt="复仇者联盟">
+            <div class="movie-title"><mark>复仇者联盟</mark></div>
+            <div class="movie-rating">评分：<strong>8.0/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：乔斯·韦登">导演：</abbr><em>乔斯·韦登</em></p>
+                <p>地球上的超级英雄们联手对抗外星入侵。</p>
+            </div>
+        </div>
+
+        <!-- 第六部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=泰坦尼克号" alt="泰坦尼克号">
+            <div class="movie-title"><mark>泰坦尼克号</mark></div>
+            <div class="movie-rating">评分：<strong>7.8/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：詹姆斯·卡梅隆">导演：</abbr><em>詹姆斯·卡梅隆</em></p>
+                <p>讲述了世纪之船沉没时，一段跨越生死的爱情故事。</p>
             </div>
         </div>
     </div>
 </section>
 
-<footer>
+<footer class="footer">
     <p>© 2024 电影评分网站 | 设计与开发者：你的名字</p>
+    <p><a href="mailto:your.email@example.com">联系开发者</a></p>
 </footer>
 
 </body>
