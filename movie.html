@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>著名电影与评分</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .movie-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 280px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .movie-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .movie-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .movie-rating {
+            color: #f39c12;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .movie-description {
+            font-size: 1em;
+            color: #555;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>欢迎来到《著名电影与评分》网站</h1>
+    <p>探索经典电影和它们的评分。</p>
+</header>
+
+<section>
+    <h2>电影推荐榜单</h2>
+    <p><strong>以下是一些广受欢迎的电影及其评分。</strong></p>
+
+    <div class="movie-list">
+        <!-- 第一部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=电影1" alt="电影1">
+            <div class="movie-title"><mark>肖申克的救赎</mark></div>
+            <div class="movie-rating">
+                <em>评分：</em><strong>9.3/10</strong>
+            </div>
+            <div class="movie-description">
+                <p><abbr title="导演：弗兰克·德拉邦特">导演：</abbr><em>弗兰克·德拉邦特</em></p>
+                <p>这是一部讲述一名无辜囚犯在监狱中追寻自由的感人故事。</p>
+            </div>
+        </div>
+
+        <!-- 第二部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=电影2" alt="电影2">
+            <div class="movie-title"><mark>教父</mark></div>
+            <div class="movie-rating">
+                <em>评分：</em><strong>9.2/10</strong>
+            </div>
+            <div class="movie-description">
+                <p><abbr title="导演：弗朗西斯·福特·科波拉">导演：</abbr><em>弗朗西斯·福特·科波拉</em></p>
+                <p>讲述了黑帮家族的兴衰与父权的故事。</p>
+            </div>
+        </div>
+
+        <!-- 第三部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=电影3" alt="电影3">
+            <div class="movie-title"><mark>盗梦空间</mark></div>
+            <div class="movie-rating">
+                <em>评分：</em><strong>8.8/10</strong>
+            </div>
+            <div class="movie-description">
+                <p><abbr title="导演：克里斯托弗·诺兰">导演：</abbr><em>克里斯托弗·诺兰</em></p>
+                <p>这是一部充满脑洞的科幻电影，探讨梦境与现实的界限。</p>
+            </div>
+        </div>
+
+        <!-- 第四部电影 -->
+        <div class="movie-item">
+            <img src="https://via.placeholder.com/280x400?text=电影4" alt="电影4">
+            <div class="movie-title"><mark>星际穿越</mark></div>
+            <div class="movie-rating">
+                <em>评分：</em><strong>8.6/10</strong>
+            </div>
+            <div class="movie-description">
+                <p><abbr title="导演：克里斯托弗·诺兰">导演：</abbr><em>克里斯托弗·诺兰</em></p>
+                <p>在地球面临灭绝的情况下，一群宇航员展开星际冒险，寻找人类的新家园。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 电影评分网站 | 设计与开发者：你的名字</p>
+</footer>
+
+</body>
+</html>
