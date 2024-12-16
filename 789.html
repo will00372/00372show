@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple PPT with Modern Poems</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
 
+  .presentation {
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  #slides .slide {
+    display: none; /* 默认隐藏所有幻灯片 */
+    padding: 20px;
+    border: 2px solid #ddd;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #slides .slide.active {
+    display: flex; /* 当前激活的幻灯片会显示 */
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="presentation" id="presentation">
+  <div id="slides">
+    <!-- 幻灯片列表 -->
+    <div class="slide active">
+      <h1>Slide 1</h1>
+      <p><strong>Modern Poem 1: "The Red Wheelbarrow" by William Carlos Williams</strong></p>
+      <p>so much depends</p>
+      <p>upon</p>
+      <p>a red wheel</p>
+      <p>barrow</p>
+      <p>glazed with rain</p>
+      <p>water</p>
+      <p>beside the white</p>
+      <p>chickens.</p>
+    </div>
+    <div class="slide">
+      <h1>Slide 2</h1>
+      <p><strong>Modern Poem 2: "This Is Just To Say" by William Carlos Williams</strong></p>
+      <p>I have eaten</p>
+      <p>the plums</p>
+      <p>that were in</p>
+      <p>the icebox</p>
+      <p>and which</p>
+      <p>you were probably</p>
+      <p>saving</p>
+      <p>for breakfast</p>
+      <p>Forgive me</p>
+      <p>they were delicious</p>
+      <p>so sweet</p>
+      <p>and so cold</p>
+    </div>
+    <div class="slide">
+      <h1>Slide 3</h1>
+      <p><strong>Modern Poem 3: "Stopping by Woods on a Snowy Evening" by Robert Frost</strong></p>
+      <p>Whose woods these are I think I know.</p>
+      <p>His house is in the village though;</p>
+      <p>He will not see me stopping here</p>
+      <p>To watch his woods fill up with snow.</p>
+      <br>
+      <p>My little horse must think it queer</p>
+      <p>To stop without a farmhouse near</p>
+      <p>Between the woods and frozen lake</p>
+      <p>The darkest evening of the year.</p>
+      <br>
+      <p>He gives his harness bells a shake</p>
+      <p>To ask if there is some mistake.</p>
+      <p>The only other sound’s the sweep</p>
+      <p>Of easy wind and downy flake.</p>
+      <br>
+      <p>The woods are lovely, dark and deep,</p>
+      <p>But I have promises to keep,</p>
+      <p>And miles to go before I sleep,</p>
+      <p>And miles to go before I sleep.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlideIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlideIndex < slides.length - 1) {
+        currentSlideIndex++;
+        showSlide(currentSlideIndex);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        showSlide(currentSlideIndex);
+      }
+    }
+
+    // 监听键盘事件
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    // 监听触摸事件
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const presentation = document.getElementById('presentation');
+
+    presentation.addEventListener('touchstart', function(event) {
+      touchStartX = event.touches[0].clientX;
+    });
+
+    presentation.addEventListener('touchend', function(event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 100; // 滑动阈值
+
+      if (touchEndX < touchStartX && (touchStartX - touchEndX) > swipeThreshold) {
+        nextSlide(); // 向右滑动
+      } else if (touchEndX > touchStartX && (touchEndX - touchStartX) > swipeThreshold) {
+        prevSlide(); // 向左滑动
+      }
+    }
+
+    // 初始显示第一张幻灯片
+    showSlide(currentSlideIndex);
+  });
+</script>
+</body>
+</html>
