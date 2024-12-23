@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D3.js 分组柱状图</title>
-<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script> 
 <style>
 body {
 font-family: Arial, sans-serif;
@@ -39,17 +39,18 @@ font-size: 12px;
 <div id="chart"></div>
 
 <script>
-// 定义数据
+// 定义真实数据
 const data = [
-{ year: "2020", country: "美国", gdp: 21.43 },
-{ year: "2020", country: "中国", gdp: 14.34 },
-{ year: "2020", country: "印度", gdp: 2.87 },
-{ year: "2021", country: "美国", gdp: 23.00 },
-{ year: "2021", country: "中国", gdp: 16.86 },
-{ year: "2021", country: "印度", gdp: 3.17 },
-{ year: "2022", country: "美国", gdp: 25.00 },
-{ year: "2022", country: "中国", gdp: 18.32 },
-{ year: "2022", country: "印度", gdp: 3.74 }
+    { year: "2015", country: "美国", gdp: 18.04 },
+    { year: "2015", country: "中国", gdp: 11.09 },
+    { year: "2015", country: "日本", gdp: 4.84 },
+    { year: "2016", country: "美国", gdp: 18.62 },
+    { year: "2016", country: "中国", gdp: 11.39 },
+    { year: "2016", country: "日本", gdp: 4.90 },
+    { year: "2017", country: "美国", gdp: 19.39 },
+    { year: "2017", country: "中国", gdp: 12.24 },
+    { year: "2017", country: "日本", gdp: 4.88 },
+    // 更多年份和国家的数据...
 ];
 
 // 设置图表的尺寸和边距
@@ -146,7 +147,24 @@ svg.selectAll("g.bar-group")
     });
 
 // 添加图例
-svg.append("g")
-    .selectAll("rect")
-    .data(countries)
-    .enter()
+const legend = svg.append("g")
+    .attr("class", "legend")
+    .attr("transform", `translate(${width - 100}, ${height - 20})`)
+    .style("font-size", "12px")
+    .call(d3.axisRight(color)
+        .ticks(5)
+        .tickFormat(d => countries.includes(d) ? d : ''));
+
+legend.selectAll('.tick text')
+    .attr("x", "100")
+    .attr("y", function(d, i) { return i * 20; });
+
+legend.selectAll('.tick line')
+    .attr("x1", "90")
+    .attr("x2", "95");
+
+legend.selectAll('.tick')
+    .attr("transform", function(d, i) { return `translate(0, ${i * 20})`; });
+</script>
+</body>
+</html>
