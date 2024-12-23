@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交互式世界地图</title>
+    <title>交互式世界地图 - 人口密度</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
@@ -58,7 +58,7 @@
 
         // 创建颜色比例尺（用于填充不同国家）
         const colorScale = d3.scaleLinear()
-            .domain([0, 1000]) // 假设数据范围
+            .domain([0, 1000]) // 假设人口密度从 0 到 1000（单位：人/平方公里）
             .range(["#f0f8ff", "#0050a0"]); // 从浅蓝到深蓝
 
         // 工具提示
@@ -67,18 +67,27 @@
         // 加载 GeoJSON 数据
         d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
             .then(geoData => {
-                // 假设每个国家的自定义数据（例如 GDP 或人口）
-                const customData = {
-                    "China": 1400, // 单位：百万
-                    "India": 1380,
-                    "United States": 330,
-                    "Indonesia": 270,
-                    "Pakistan": 220,
-                    "Brazil": 212,
-                    "Nigeria": 206,
-                    "Bangladesh": 165,
-                    "Russia": 145,
-                    "Mexico": 126
+                // 人口密度数据（单位：人/平方公里）
+                const densityData = {
+                    "China": 153,
+                    "India": 464,
+                    "United States": 36,
+                    "Indonesia": 151,
+                    "Pakistan": 287,
+                    "Brazil": 25,
+                    "Nigeria": 226,
+                    "Bangladesh": 1265,
+                    "Russia": 9,
+                    "Mexico": 66,
+                    "Japan": 347,
+                    "Germany": 233,
+                    "United Kingdom": 277,
+                    "France": 123,
+                    "Italy": 205,
+                    "South Korea": 527,
+                    "South Africa": 48,
+                    "Canada": 4,
+                    "Australia": 3
                 };
 
                 // 绘制地图
@@ -89,20 +98,20 @@
                     .attr("d", path)
                     .attr("fill", d => {
                         const countryName = d.properties.name;
-                        const value = customData[countryName];
+                        const value = densityData[countryName];
                         return value ? colorScale(value) : "#ccc"; // 如果没有数据，使用灰色
                     })
                     .attr("stroke", "#333")
                     .attr("stroke-width", 0.5)
                     .on("mouseover", function (event, d) {
                         const countryName = d.properties.name;
-                        const value = customData[countryName] || "无数据";
+                        const value = densityData[countryName] || "无数据";
 
                         tooltip.transition()
                             .duration(200)
                             .style("opacity", 1);
 
-                        tooltip.html(`国家: ${countryName}<br>人口: ${value} 百万`)
+                        tooltip.html(`国家: ${countryName}<br>人口密度: ${value === "无数据" ? value : value + " 人/平方公里"}`)
                             .style("left", (event.pageX + 10) + "px")
                             .style("top", (event.pageY - 20) + "px");
                         
@@ -117,7 +126,7 @@
                         d3.select(this)
                             .attr("fill", d => {
                                 const countryName = d.properties.name;
-                                const value = customData[countryName];
+                                const value = densityData[countryName];
                                 return value ? colorScale(value) : "#ccc";
                             });
                     });
