@@ -189,6 +189,41 @@
         d3.select("#resetZoom").on("click", function () {
             svg.transition().call(zoom.transform, d3.zoomIdentity); // 重置为初始缩放
         });
+        const width = 960;
+const height = 600;
+
+// 创建 SVG 容器
+const svg = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style("background-color", "#f9f9f9");
+
+// 投影设置
+const projection = d3.geoMercator()
+    .scale(800) // 缩放
+    .translate([width / 2, height / 2]) // 平移
+    .center([20, 55]); // 中心点
+
+const path = d3.geoPath().projection(projection);
+
+// 加载 GeoJSON 文件
+d3.json("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson")
+    .then(data => {
+        // 渲染地图
+        svg.selectAll("path")
+            .data(data.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .attr("fill", "#cce5ff")
+            .attr("stroke", "#333")
+            .attr("stroke-width", 0.5);
+
+        console.log("地图加载成功");
+    })
+    .catch(error => console.error("GeoJSON 加载失败", error));
+
     </script>
 </body>
 </html>
