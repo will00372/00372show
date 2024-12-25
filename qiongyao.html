@@ -24,12 +24,11 @@
             position: relative;
             width: 100%;
             height: 100vh; /* 让背景图充满屏幕 */
-            background-image: url('OIP.jpg'); /* 替换为你的背景图片 */
+            background-image: url('p2913568481.webp'); /* 替换为你的背景图片 */
             background-size: cover;
             background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            filter: blur(10px); /* 模糊背景 */
+            z-index: -1; /* 将背景图片置于其他内容之下 */
         }
 
         header .overlay {
@@ -42,15 +41,18 @@
             color: #fff;
             text-align: center;
             padding: 20px;
+            z-index: 1; /* 确保文本层在背景之上 */
         }
 
         header h1 {
             font-size: 3em;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 添加阴影效果 */
         }
 
         header p {
             font-size: 1.2em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* 添加阴影效果 */
         }
 
         /* 主体内容 */
