@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>琼瑶式浪漫电影推荐</title>
+    <title>琼瑶事件分析与作品评价</title>
     <style>
         /* 页面背景和字体 */
         body {
@@ -42,40 +42,41 @@
 
         /* 主内容部分 */
         section {
-            padding: 40px 20px;
+            padding: 60px 30px;
             max-width: 1200px;
-            margin: 40px auto; /* 增加上下间距 */
+            margin: 60px auto; /* 增加上下间距 */
             background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色背景，增加古典气氛 */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(8px); /* 背景模糊效果 */
         }
-        .movie-list {
+        .analysis-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 30px;
+            gap: 50px;
         }
 
-        /* 单个电影项 */
-        .movie-item {
+        /* 单个分析项 */
+        .analysis-item {
             background-color: #6F4F23; /* 古典棕色背景 */
             border-radius: 12px;
             width: 280px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 40px; /* 增加每个项目的下间距 */
         }
-        .movie-item:hover {
+        .analysis-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
         }
-        .movie-item img {
+        .analysis-item img {
             width: 100%;
-            height: 400px;
+            height: 200px;
             object-fit: cover;
         }
-        .movie-title {
+        .analysis-title {
             font-size: 1.8em;
             font-weight: bold;
             color: #FFD700; /* 金色字体 */
@@ -84,28 +85,19 @@
             text-align: center;
             text-shadow: 0 0 10px #FFD700;
         }
-        .movie-rating {
-            font-size: 1.2em;
-            color: #FFD700;
-            font-weight: bold;
-            text-align: center;
-            padding: 10px;
-            background-color: #9E2A2F;
-            text-shadow: 0 0 10px #FFD700;
-        }
-        .movie-description {
+        .analysis-description {
             font-size: 1em;
             color: #F5F0E1; /* 浅米白色文字 */
             padding: 15px;
             background-color: #6F4F23;
             text-align: left;
         }
-        .movie-description p {
+        .analysis-description p {
             margin: 5px 0;
         }
 
         /* 按钮样式 */
-        .movie-item .button {
+        .analysis-item .button {
             display: block;
             margin: 20px auto;
             padding: 12px 20px;
@@ -117,7 +109,7 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        .movie-item .button:hover {
+        .analysis-item .button:hover {
             background-color: #C68E17; /* 按钮悬停颜色 */
         }
 
@@ -143,53 +135,50 @@
 <body>
 
 <header>
-    <h1>琼瑶式浪漫电影推荐</h1>
-    <p>每一段爱情，都是一场命中注定的相遇。</p>
+    <h1>琼瑶事件分析与作品评价</h1>
+    <p>深刻剖析琼瑶的情感世界及其文化影响</p>
 </header>
 
 <section>
-    <h2 style="text-align: center; font-size: 2.5em; color: #FFD700; margin-bottom: 30px;">琼瑶浪漫电影榜单</h2>
-    <div class="movie-list">
-        <!-- 第一部电影 -->
-        <div class="movie-item">
-            <img src="yinmie.jpeg" alt="基于新闻事件：琼瑶去世事件的舆情分析">
-            <div class="movie-title"><mark>基于新闻事件：琼瑶去世事件的舆情分析</mark></div>
-            <div class="movie-rating">评分：<strong>7.9/10</strong></div>
-            <div class="movie-description">
-                <p><abbr title="导演：亚历克斯·嘉兰">导演：</abbr><em>亚历克斯·嘉兰</em></p>
-                <p>评语：在神秘的“闪烁区”，一段爱情与哲理的交织。爱情的力量，超越时间与空间，温柔却又致命。</p>
+    <h2 style="text-align: center; font-size: 2.5em; color: #FFD700; margin-bottom: 40px;">琼瑶事件分析专题</h2>
+    <div class="analysis-list">
+        <!-- 第一项分析：琼瑶去世事件的舆情分析 -->
+        <div class="analysis-item">
+            <img src="qiongyao-death.jpg" alt="琼瑶去世">
+            <div class="analysis-title"><mark>琼瑶去世事件的舆情分析</mark></div>
+            <div class="analysis-description">
+                <p>分析：琼瑶去世事件一经报道，迅速引发了广泛的舆论反应。公众对她的作品和她本人的评价呈现多维度的讨论。</p>
+                <p>从情感的角度来看，琼瑶的离世让无数影迷和读者感到失落，尤其是她的经典作品在社会中的文化地位，值得我们深思。</p>
             </div>
-            <a href="yinmie.html" class="button">查看详情</a>
+            <a href="qiongyao-death-analysis.html" class="button">查看详情</a>
         </div>
 
-        <!-- 第二部电影 -->
-        <div class="movie-item">
-            <img src="dixinyinli.jpeg" alt="价值层面分析：“琼瑶式”情感拆解">
-            <div class="movie-title"><mark>价值层面分析：“琼瑶式”情感拆解</mark></div>
-            <div class="movie-rating">评分：<strong>8.0/10</strong></div>
-            <div class="movie-description">
-                <p><abbr title="导演：阿方索·卡隆">导演：</abbr><em>阿方索·卡隆</em></p>
-                <p>评语：宇航员在无边的宇宙中孤独漂浮，与生死做斗争，爱的力量让她重新找到回家的希望。</p>
+        <!-- 第二项分析：价值层面分析：“琼瑶式”情感拆解 -->
+        <div class="analysis-item">
+            <img src="qiongyao-style.jpg" alt="琼瑶情感风格">
+            <div class="analysis-title"><mark>价值层面分析：“琼瑶式”情感拆解</mark></div>
+            <div class="analysis-description">
+                <p>分析：琼瑶作品中的“琼瑶式情感”具有独特的文化内涵，强调情感的浓烈与悲剧性。这种情感风格在当代文化中的影响依然深远。</p>
+                <p>本部分探讨了琼瑶作品中的爱情观与人生观，以及如何通过影视文学作品展现情感的复杂性。</p>
             </div>
-            <a href="dixinyinli.html" class="button">查看详情</a>
+            <a href="qiongyao-emotion-analysis.html" class="button">查看详情</a>
         </div>
 
-        <!-- 第三部电影 -->
-        <div class="movie-item">
-            <img src="yueqiu.jpeg" alt="琼瑶作品回响：影视与文学作品评价分析">
-            <div class="movie-title"><mark>琼瑶作品回响：影视与文学作品评价分析</mark></div>
-            <div class="movie-rating">评分：<strong>8.0/10</strong></div>
-            <div class="movie-description">
-                <p><abbr title="导演：邓肯·琼斯">导演：</abbr><em>邓肯·琼斯</em></p>
-                <p>评语：孤独的宇航员，在月球的荒凉中找到自己内心的答案。情感与哲理交织，深刻动人。</p>
+        <!-- 第三项分析：琼瑶作品回响：影视与文学作品评价分析 -->
+        <div class="analysis-item">
+            <img src="qiongyao-works.jpg" alt="琼瑶作品">
+            <div class="analysis-title"><mark>琼瑶作品回响：影视与文学作品评价分析</mark></div>
+            <div class="analysis-description">
+                <p>分析：琼瑶的作品涵盖了电影、电视剧和小说等多种形式，其作品的文化价值和情感深度被广大观众所接受。</p>
+                <p>本文将对琼瑶的作品进行回顾分析，从影视与文学两个角度探讨其对当代文化的深远影响。</p>
             </div>
-            <a href="yueqiu.html" class="button">查看详情</a>
+            <a href="qiongyao-works-analysis.html" class="button">查看详情</a>
         </div>
     </div>
 </section>
 
 <div class="footer">
-    <p>© 2024 琼瑶浪漫电影推荐</p>
+    <p>© 2024 琼瑶事件分析与作品评价</p>
 </div>
 
 </body>
