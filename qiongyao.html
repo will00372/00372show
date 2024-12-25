@@ -8,7 +8,10 @@
         /* 页面背景和字体 */
         body {
             font-family: 'KaiTi', cursive; /* 使用楷体字体，体现中式风格 */
-            background-color: #F5F0E1; /* 浅米色背景，温暖柔和 */
+            background-image: url('p2913568481.webp'); /* 替换成你要的背景图片路径 */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #5F3A1D; /* 深棕色文字 */
             margin: 0;
             padding: 0;
@@ -19,7 +22,7 @@
 
         /* 页头样式 */
         header {
-            background-color: #9E2A2F; /* 朱红色背景 */
+            background-color: rgba(158, 42, 47, 0.8); /* 半透明朱红色背景 */
             color: #FFD700; /* 金色字体 */
             padding: 50px 0;
             text-align: center;
@@ -37,7 +40,7 @@
             text-shadow: 0 0 15px #FFD700;
         }
 
-        /* 电影推荐部分样式 */
+        /* 主内容部分 */
         section {
             padding: 40px 20px;
             max-width: 1200px;
@@ -45,6 +48,7 @@
             background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色背景，增加古典气氛 */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px); /* 背景模糊效果 */
         }
         .movie-list {
             display: flex;
@@ -119,10 +123,13 @@
 
         /* 页脚样式 */
         .footer {
-            background-color: #9E2A2F; /* 朱红色背景 */
+            background-color: rgba(158, 42, 47, 0.8); /* 半透明朱红色背景 */
             color: #F5F0E1; /* 浅米白色字体 */
             text-align: center;
             padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
         a {
             color: #FFD700; /* 金色链接 */
@@ -184,18 +191,4 @@
             <img src="heikediguo.jpeg" alt="黑客帝国">
             <div class="movie-title"><mark>黑客帝国</mark></div>
             <div class="movie-rating">评分：<strong>8.7/10</strong></div>
-            <div class="movie-description">
-                <p><abbr title="导演：沃卓斯基姐妹">导演：</abbr><em>沃卓斯基姐妹</em></p>
-                <p>评语：在虚拟世界与现实世界之间，爱情是唯一真实存在的东西，它穿越了一切虚假与迷惑。</p>
-            </div>
-            <a href="heikediguo.html" class="button">查看详情</a>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <p>&copy; 2024 琼瑶浪漫电影推荐 | 版权所有</p>
-</footer>
-
-</body>
-</html>
+            <div class
