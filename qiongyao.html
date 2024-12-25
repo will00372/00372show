@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>琼瑶作品集</title>
+    <style>
+        /* 全局设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 网站顶部 */
+        header {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* 让背景图充满屏幕 */
+            background-image: url('your-background-image.jpg'); /* 替换为你的背景图片 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* 主体内容 */
+        main {
+            padding: 40px;
+        }
+
+        /* 关于琼瑶部分 */
+        .intro {
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+        }
+
+        /* 经典作品部分 */
+        .works {
+            margin-bottom: 40px;
+        }
+
+        .works h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .work-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .work-item img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .work-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .work-item p {
+            font-size: 1.1em;
+        }
+
+        /* 经典语录部分 */
+        .quotes {
+            margin-top: 40px;
+            background-color: #fff8f0;
+            padding: 20px;
+            border-left: 5px solid #ff6600;
+        }
+
+        .quotes blockquote {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .quotes blockquote footer {
+            text-align: right;
+            font-size: 1em;
+            color: #777;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- 网站顶部标题部分 -->
+    <header>
+        <div class="overlay">
+            <h1>琼瑶的浪漫世界</h1>
+            <p>欢迎来到琼瑶作品的情感旅程</p>
+        </div>
+    </header>
+
+    <!-- 网站主要内容部分 -->
+    <main>
+        <section class="intro">
+            <h2>关于琼瑶</h2>
+            <p>琼瑶是中国知名的小说家和编剧，创作了大量感人至深的爱情故事...</p>
+        </section>
+
+        <section class="works">
+            <h2>经典作品</h2>
+            <div class="work-item">
+                <img src="work1.jpg" alt="作品封面1">
+                <h3>《还珠格格》</h3>
+                <p>经典的爱情故事，影响了一代人...</p>
+            </div>
+            <div class="work-item">
+                <img src="work2.jpg" alt="作品封面2">
+                <h3>《梅花烙》</h3>
+                <p>深刻的情感碰撞，感人的悲喜故事...</p>
+            </div>
+        </section>
+
+        <!-- 经典语录 -->
+        <section class="quotes">
+            <h2>经典语录</h2>
+            <blockquote>
+                <p>"爱情不是占有，而是成全。"</p>
+                <footer>— 《还珠格格》</footer>
+            </blockquote>
+        </section>
+    </main>
+
+    <!-- 页脚部分 -->
+    <footer>
+        <p>&copy; 2024 琼瑶作品集 - 所有权利保留</p>
+    </footer>
+</body>
+</html>
