@@ -1,188 +1,199 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>琼瑶作品集</title>
+    <title>小众宝藏电影推荐</title>
     <style>
-        /* 全局设置 */
-        * {
+        /* 页面背景和字体 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('p2913568481.webp'); /* 使用自定义背景图片 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: "微软雅黑", sans-serif;
+            color: #ecf0f1; /* 浅色字体 */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* 网站顶部 */
+        
+        /* 页头样式 */
         header {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* 让背景图充满屏幕 */
-            background-image: url('p2913568481.webp'); /* 替换为你的背景图片 */
-            background-size: cover;
-            background-position: center;
-            filter: blur(10px); /* 模糊背景 */
-            z-index: -1; /* 将背景图片置于其他内容之下 */
-        }
-
-        header .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
-            color: #fff;
+            background-color: rgba(33, 47, 60, 0.8); /* 半透明背景 */
+            color: #e74c3c; /* 红色霓虹效果 */
+            padding: 40px 0;
             text-align: center;
-            padding: 20px;
-            z-index: 1; /* 确保文本层在背景之上 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-
         header h1 {
             font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 添加阴影效果 */
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c; /* 红色霓虹效果 */
         }
-
         header p {
-            font-size: 1.2em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* 添加阴影效果 */
+            font-size: 1.3em;
+            margin-top: 10px;
+            text-shadow: 0 0 10px #f39c12;
         }
 
-        /* 主体内容 */
-        main {
-            padding: 40px;
+        /* 电影推荐部分样式 */
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+            border-radius: 10px;
         }
-
-        /* 关于琼瑶部分 */
-        .intro {
-            margin-bottom: 40px;
-        }
-
-        .intro h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .intro p {
-            font-size: 1.2em;
-        }
-
-        /* 经典作品部分 */
-        .works {
-            margin-bottom: 40px;
-        }
-
-        .works h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .work-item {
-            margin-bottom: 20px;
+        .movie-list {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
         }
 
-        .work-item img {
-            width: 150px;
-            height: 200px;
+        /* 单个电影项 */
+        .movie-item {
+            background-color: #34495e; /* 深蓝色背景 */
+            border-radius: 10px;
+            width: 280px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .movie-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .movie-item img {
+            width: 100%;
+            height: 400px;
             object-fit: cover;
-            margin-right: 20px;
         }
-
-        .work-item h3 {
+        .movie-title {
             font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .work-item p {
-            font-size: 1.1em;
-        }
-
-        /* 经典语录部分 */
-        .quotes {
-            margin-top: 40px;
-            background-color: #fff8f0;
-            padding: 20px;
-            border-left: 5px solid #ff6600;
-        }
-
-        .quotes blockquote {
-            font-style: italic;
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        .quotes blockquote footer {
-            text-align: right;
-            font-size: 1em;
-            color: #777;
-        }
-
-        /* 页脚 */
-        footer {
-            background-color: #333;
-            color: #fff;
+            font-weight: bold;
+            color: #8e44ad; /* 紫色 */
+            padding: 15px;
+            background-color: #34495e;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 40px;
+            text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad;
+        }
+        .movie-rating {
+            font-size: 1.2em;
+            color: #f39c12; /* 霓虹黄色 */
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            text-shadow: 0 0 10px #f39c12;
+        }
+        .movie-description {
+            font-size: 1em;
+            color: #bdc3c7; /* 浅灰色文字 */
+            padding: 15px;
+            background-color: #2c3e50;
+            text-align: left;
+        }
+        .movie-description p {
+            margin: 5px 0;
         }
 
-        footer p {
-            font-size: 1em;
+        /* 跳转按钮样式 */
+        .movie-item .button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: #e74c3c; /* 红色按钮 */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .movie-item .button:hover {
+            background-color: #c0392b;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: rgba(33, 47, 60, 0.8);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        a {
+            color: #2980b9; /* 蓝色链接 */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- 网站顶部标题部分 -->
-    <header>
-        <div class="overlay">
-            <h1>琼瑶的浪漫世界</h1>
-            <p>欢迎来到琼瑶作品的情感旅程</p>
+
+<header>
+    <h1>小众宝藏科幻电影推荐</h1>
+    <p>探索那些被忽视的经典电影，体验不一样的艺术魅力。will本人倾情推荐</p>
+</header>
+
+<section>
+    <h2 style="text-align: center; font-size: 2.5em; color: #f39c12; margin-bottom: 30px;">电影推荐榜单</h2>
+    <div class="movie-list">
+        <!-- 第一部电影 -->
+        <div class="movie-item">
+            <img src="yinmie.jpeg" alt="湮灭">
+            <div class="movie-title"><mark>湮灭</mark></div>
+            <div class="movie-rating">评分：<strong>7.9/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：亚历克斯·嘉兰">导演：</abbr><em>亚历克斯·嘉兰</em></p>
+                <p>评语：一支科学小组探索神秘的“闪烁区”，面临未知的生物和空间现象。牛逼克苏鲁神作，原著与三体同年拿下雨果奖</p>
+            </div>
+            <a href="yinmie.html" class="button">查看详情</a>
         </div>
-    </header>
 
-    <!-- 网站主要内容部分 -->
-    <main>
-        <section class="intro">
-            <h2>关于琼瑶</h2>
-            <p>琼瑶是中国知名的小说家和编剧，创作了大量感人至深的爱情故事...</p>
-        </section>
-
-        <section class="works">
-            <h2>经典作品</h2>
-            <div class="work-item">
-                <img src="work1.jpg" alt="作品封面1">
-                <h3>《还珠格格》</h3>
-                <p>经典的爱情故事，影响了一代人...</p>
+        <!-- 第二部电影 -->
+        <div class="movie-item">
+            <img src="dixinyinli.jpeg" alt="地心引力">
+            <div class="movie-title"><mark>地心引力</mark></div>
+            <div class="movie-rating">评分：<strong>8.0/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：阿方索·卡隆">导演：</abbr><em>阿方索·卡隆</em></p>
+                <p>评语：一场人在极端条件下的生存实验，挑战了人类对极限的认知。</p>
             </div>
-            <div class="work-item">
-                <img src="work2.jpg" alt="作品封面2">
-                <h3>《梅花烙》</h3>
-                <p>深刻的情感碰撞，感人的悲喜故事...</p>
+            <a href="dixinyinli.html" class="button">查看详情</a>
+        </div>
+
+        <!-- 第三部电影 -->
+        <div class="movie-item">
+            <img src="yueqiu.jpeg" alt="月球">
+            <div class="movie-title"><mark>月球</mark></div>
+            <div class="movie-rating">评分：<strong>8.0/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：邓肯·琼斯">导演：</abbr><em>邓肯·琼斯</em></p>
+                <p>评语：一名孤独的宇航员，发现自己在月球基地的最后几天发生了不可思议的事情。科幻与哲学完美结合</p>
             </div>
-        </section>
+            <a href="yueqiu.html" class="button">查看详情</a>
+        </div>
 
-        <!-- 经典语录 -->
-        <section class="quotes">
-            <h2>经典语录</h2>
-            <blockquote>
-                <p>"爱情不是占有，而是成全。"</p>
-                <footer>— 《还珠格格》</footer>
-            </blockquote>
-        </section>
-    </main>
+        <!-- 第四部电影 -->
+        <div class="movie-item">
+            <img src="yiciyuanshazhen.jpeg" alt="异次元杀阵">
+            <div class="movie-title"><mark>异次元杀阵</mark></div>
+            <div class="movie-rating">评分：<strong>7.7/10</strong></div>
+            <div class="movie-description">
+                <p><abbr title="导演：文森佐·纳塔里">导演：</abbr><em>文森佐·纳塔里</em></p>
+                <p>评语；几位陌生人在一个充满死亡机关的建筑中被困，他们必须找到出路。</p>
+            </div>
+            <a href="yiciyuanshazhen.html" class="button">查看详情</a>
+        </div>
 
-    <!-- 页脚部分 -->
-    <footer>
-        <p>&copy; 2024 琼瑶作品集 - 所有权利保留</p>
-    </footer>
-</body>
-</html>
+        <!-- 第五部电影 -->
+        <div class="movie-item">
+            <img src="heikediguo.jpeg" alt="黑客帝国">
+            <div class="movie-title
