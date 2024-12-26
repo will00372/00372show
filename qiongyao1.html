@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>琼瑶主题网页</title>
+    <style>
+        /* 基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('your-image.jpg'); /* 你的背景图片路径 */
+            background-size: cover; /* 背景图片覆盖整个屏幕 */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        /* 中心容器样式 */
+        .container {
+            text-align: center;
+            max-width: 90%;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 标题样式 */
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* SVG容器样式 */
+        .svg-container {
+            display: inline-block;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* 轻微的白色背景 */
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 在手机屏幕上的自适应调整 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .svg-container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 网页内容 -->
+    <div class="container">
+        <h1 class="title">琼瑶的故事</h1>
+        <div class="svg-container">
+            <!-- 你可以将你选的 SVG 矢量图粘贴在这里 -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+                <!-- 示例：一个简单的圆形矢量图 -->
+                <circle cx="100" cy="100" r="80" stroke="black" stroke-width="4" fill="lightblue" />
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
