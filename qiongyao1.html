@@ -5,148 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>微博热度赛跑图</title>
     <style>
-        /* 设置背景图片 */
+        /* 设置背景为图片 */
         body {
-            font-family: 'Arial', sans-serif;
-            background: url('p2263933987.webp') no-repeat center center fixed; /* 替换为你的图片链接 */
+            font-family: 'Georgia', serif;
+            background-image: url('p2263933987.webp'); /* 替换为您的图片URL */
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
+            color: #fff;
+            overflow: hidden;
         }
 
         /* 页面容器 */
         .container {
-            width: 100%;
-            max-width: 1200px;
-            padding: 20px;
+            width: 80%;
+            max-width: 900px;
+            padding: 30px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* 美化标题 */
         h1 {
-            color: #333;
-            font-size: 3em;
+            color: #e0aaff;
+            font-size: 3.5em;
             font-weight: bold;
             margin-bottom: 30px;
-            background: -webkit-linear-gradient(45deg, #ff6a00, #ee0979); /* 渐变文字颜色 */
+            background: -webkit-linear-gradient(45deg, #ff8ea0, #e0aaff); /* 温柔渐变颜色 */
             -webkit-background-clip: text;
             color: transparent;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             padding: 10px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 页码标题 */
-        .page-title {
-            font-size: 2.5em;
-            color: #ff6a00;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
         }
 
         /* iframe容器 */
         .iframe-container {
-            position: relative;
             width: 100%;
-            max-width: 1000px; /* 最大宽度 */
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            padding-bottom: 56.25%; /* 16:9比例 */
-            height: 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         /* iframe样式 */
         .iframe {
-            position: absolute;
             width: 100%;
-            height: 100%;
+            height: 500px;
             border: none;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
 
         /* Hover效果 */
         .iframe-container:hover .iframe {
-            transform: scale(1.05); /* 放大效果 */
+            opacity: 0.7; /* 鼠标悬停时增加透明度变化 */
+        }
+
+        /* 按钮样式 */
+        .return-btn {
+            background-color: #ff8ea0;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .return-btn:hover {
+            background-color: #e0aaff;
         }
 
         /* 页面响应式设计 */
         @media (max-width: 768px) {
             .container {
-                padding: 15px;
+                padding: 20px;
             }
 
             h1 {
                 font-size: 2.5em;
             }
 
-            .iframe-container {
-                padding-bottom: 56.25%; /* 保持16:9比例 */
-            }
-
             .iframe {
-                height: 100%;
+                height: 350px;
             }
-
-            .page-title {
-                font-size: 2em;
-            }
-        }
-
-        /* 按钮样式 */
-        .btn {
-            background-color: #ff6a00;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1.2em;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ee0979;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>微博热度赛跑图</h1>
-        <!-- 页码标题 -->
-        <div class="page-title">微博热度赛跑图</div>
-        
         <div class="iframe-container">
-            <iframe class="iframe" src="https://dycharts.com/xshow/index.html?id=c_b268b7e99f9a0809fad8a5638e604c93"width="800" height="600" scrolling="no" frameborder="0"></iframe>
+            <!-- 请将 "图片链接" 替换为实际的图片链接 -->
+            <iframe src="https://dycharts.com/xshow/index.html?id=c_b268b7e99f9a0809fad8a5638e604c93" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
         </div>
-        
-        <button class="btn" onclick="toggleIframe()">显示/隐藏图片</button>
-        <br>
-        
-        <!-- 返回按钮 -->
-        <button class="btn" onclick="window.location.href='https://will00372.github.io/00372show/qiongyao.html'">返回</button>
+        <!-- 修改此按钮，点击时跳转到指定网页 -->
+        <button class="return-btn" onclick="window.location.href='https://will00372.github.io/00372show/qiongyao.html'">返回</button>
     </div>
 
     <script>
-        // 例子：点击按钮隐藏或显示iframe
-        function toggleIframe() {
-            const iframeContainer = document.querySelector('.iframe-container');
-            iframeContainer.style.display = iframeContainer.style.display === 'none' ? 'block' : 'none';
-        }
+        // 此时无需切换透明度功能，页面直接跳转
     </script>
 </body>
 </html>
