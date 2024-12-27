@@ -75,7 +75,7 @@
         }
 
         /* 按钮样式 */
-        .toggle-btn {
+        .return-btn {
             background-color: #ff8ea0;
             color: white;
             padding: 12px 25px;
@@ -87,7 +87,7 @@
             transition: background-color 0.3s;
         }
 
-        .toggle-btn:hover {
+        .return-btn:hover {
             background-color: #e0aaff;
         }
 
@@ -114,15 +114,12 @@
             <!-- 请将 "图片链接" 替换为实际的图片链接 -->
             <iframe src="https://dycharts.com/xshow/index.html?id=c_226f6f0f637ef21c64c925fd8ccf5467" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
         </div>
-        <button class="toggle-btn" onclick="toggleOpacity()">切换透明度</button>
+        <!-- 修改此按钮，点击时跳转到指定网页 -->
+        <button class="return-btn" onclick="window.location.href='https://will00372.github.io/00372show/qiongyao.html'">返回</button>
     </div>
 
     <script>
-        // 切换iframe透明度的交互函数
-        function toggleOpacity() {
-            const iframe = document.querySelector('.iframe');
-            iframe.style.opacity = iframe.style.opacity === '0.5' ? '1' : '0.5'; // 切换透明度
-        }
+        // 此时无需切换透明度功能，页面直接跳转
     </script>
 </body>
 </html>
