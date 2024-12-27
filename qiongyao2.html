@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>琼瑶式情感分析图</title>
+    <style>
+        /* 设置背景为图片 */
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('https://example.com/your-image.jpg'); /* 替换为您的图片URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* 页面容器 */
+        .container {
+            width: 80%;
+            max-width: 900px;
+            padding: 30px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 美化标题 */
+        h1 {
+            color: #e0aaff;
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: -webkit-linear-gradient(45deg, #ff8ea0, #e0aaff); /* 温柔渐变颜色 */
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* iframe容器 */
+        .iframe-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* iframe样式 */
+        .iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 15px;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hover效果 */
+        .iframe-container:hover .iframe {
+            opacity: 0.7; /* 鼠标悬停时增加透明度变化 */
+        }
+
+        /* 按钮样式 */
+        .toggle-btn {
+            background-color: #ff8ea0;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #e0aaff;
+        }
+
+        /* 页面响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .iframe {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>琼瑶式情感分析图</h1>
+        <div class="iframe-container">
+            <!-- 请将 "图片链接" 替换为实际的图片链接 -->
+            <iframe src="https://dycharts.com/xshow/index.html?id=c_226f6f0f637ef21c64c925fd8ccf5467" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+        </div>
+        <button class="toggle-btn" onclick="toggleOpacity()">切换透明度</button>
+    </div>
+
+    <script>
+        // 切换iframe透明度的交互函数
+        function toggleOpacity() {
+            const iframe = document.querySelector('.iframe');
+            iframe.style.opacity = iframe.style.opacity === '0.5' ? '1' : '0.5'; // 切换透明度
+        }
+    </script>
+</body>
+</html>
