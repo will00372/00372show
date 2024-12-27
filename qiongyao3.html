@@ -10,14 +10,14 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            height: 100%;  /* 使 body 的高度占满整个视窗 */
             background: url('p1036737372.webp') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow: hidden; /* 防止滚动条 */
+            align-items: flex-start; /* 让内容从顶部开始 */
+            overflow-y: auto; /* 允许页面垂直滚动 */
         }
 
         /* 主容器 */
@@ -33,8 +33,9 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-            height: 90vh; /* 设置为视窗的90% */
-            max-height: 1000px; /* 设置最大高度，防止过长 */
+            height: auto; /* 高度自适应 */
+            min-height: 600px; /* 设置一个最小高度 */
+            margin-top: 50px;  /* 离顶部有一定距离 */
         }
 
         /* 标题样式 */
@@ -50,12 +51,11 @@
         /* iframe容器 */
         .iframe-container {
             width: 100%;
-            height: 1000px; /* 初始高度 */
+            height: 80vh; /* 设置为视窗的80% */
             margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             overflow: hidden;
-            resize: none; /* 禁止容器调整大小 */
         }
 
         iframe {
@@ -65,7 +65,7 @@
             display: block; /* 使iframe成为块级元素，去除底部空白 */
         }
 
-        /* 按钮样式 */
+        /* 返回按钮 */
         .btn {
             background-color: #ffcc00;
             color: #333;
@@ -81,62 +81,15 @@
         .btn:hover {
             background-color: #ff9900;
         }
-
-        /* 缩放按钮 */
-        .resize-btns {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .resize-btns button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #ff9900;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .resize-btns button:hover {
-            background-color: #ffcc00;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>琼瑶作品展示</h1>
-        <div class="iframe-container" id="iframe-container">
+        <div class="iframe-container">
             <iframe src="https://dycharts.com/xshow/index.html?id=c_5c85862880e36a422b996d0fb9e39cd2" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div class="resize-btns">
-            <button class="btn" onclick="resizeIframe('increase')">增大</button>
-            <button class="btn" onclick="resizeIframe('decrease')">减小</button>
         </div>
         <button class="btn" onclick="window.location.href='https://will00372.github.io/00372show/qiongyao.html';">返回</button>
     </div>
-
-    <script>
-        // 当前iframe的尺寸
-        let iframeWidth = 100;
-        let iframeHeight = 500;
-
-        // 调整iframe大小的函数
-        function resizeIframe(action) {
-            const iframeContainer = document.getElementById('iframe-container');
-            if (action === 'increase') {
-                iframeWidth += 10;  // 每次增大10%
-                iframeHeight += 50;  // 每次增大50px
-            } else if (action === 'decrease') {
-                iframeWidth = Math.max(50, iframeWidth - 10);  // 最小宽度为50%
-                iframeHeight = Math.max(200, iframeHeight - 50);  // 最小高度为200px
-            }
-
-            // 设置iframe容器的宽度和高度
-            iframeContainer.style.width = iframeWidth + '%';
-            iframeContainer.style.height = iframeHeight + 'px';
-        }
-    </script>
 </body>
 </html>
