@@ -3,82 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>琼瑶主题网页</title>
+    <title>图片展示</title>
     <style>
-        /* 基础设置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* 基本的页面设置 */
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('your-image.jpg'); /* 你的背景图片路径 */
-            background-size: cover; /* 背景图片覆盖整个屏幕 */
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
+            background-color: #f0f0f0; /* 浅灰色背景 */
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            height: 100vh;
         }
 
-        /* 中心容器样式 */
+        /* 页面容器 */
         .container {
-            text-align: center;
-            max-width: 90%;
+            width: 100%;
+            max-width: 1200px;
             padding: 20px;
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
 
         /* 标题样式 */
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-family: 'Georgia', serif;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 30px;
         }
 
-        /* SVG容器样式 */
-        .svg-container {
-            display: inline-block;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.7); /* 轻微的白色背景 */
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        /* iframe容器 */
+        .iframe-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* 在手机屏幕上的自适应调整 */
+        /* iframe样式 */
+        .iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover效果 */
+        .iframe-container:hover .iframe {
+            transform: scale(1.05); /* 放大效果 */
+        }
+
+        /* 页面响应式设计 */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
 
-            .title {
-                font-size: 28px;
+            h1 {
+                font-size: 2em;
             }
 
-            .svg-container {
-                padding: 10px;
+            .iframe {
+                height: 350px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 网页内容 -->
     <div class="container">
-        <h1 class="title">琼瑶的故事</h1>
-        <div class="svg-container">
-            <!-- 你可以将你选的 SVG 矢量图粘贴在这里 -->
-            <svg xmlns="https://will00372.github.io/00372show/qinggan.svg" viewBox="0 0 200 200" width="200" height="200">
-                <!-- 示例：一个简单的圆形矢量图 -->
-            </svg>
+        <h1>欢迎观看我的图片</h1>
+        <div class="iframe-container">
+            <!-- 请将 "图片链接" 替换为实际的图片链接 -->
+            <iframe src="https://dycharts.com/xshow/index.html?id=c_b268b7e99f9a0809fad8a5638e604c93" width="600" height="510" scrolling="no" frameborder="0" align="">
+            </iframe>
         </div>
+        <button onclick="toggleIframe()">显示/隐藏图片</button>
     </div>
+
+    <script>
+        // 例子：点击按钮隐藏或显示iframe
+        function toggleIframe() {
+            const iframeContainer = document.querySelector('.iframe-container');
+            iframeContainer.style.display = iframeContainer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
