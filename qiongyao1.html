@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图片展示</title>
+    <title>微博热度赛跑图</title>
     <style>
-        /* 基本的页面设置 */
+        /* 设置渐变背景颜色 */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0; /* 浅灰色背景 */
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变背景色 */
             margin: 0;
             padding: 0;
             display: flex;
@@ -29,11 +29,19 @@
             margin: 20px;
         }
 
-        /* 标题样式 */
+        /* 美化标题 */
         h1 {
             color: #333;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: bold;
             margin-bottom: 30px;
+            background: -webkit-linear-gradient(45deg, #ff6a00, #ee0979); /* 渐变文字颜色 */
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         /* iframe容器 */
@@ -68,7 +76,7 @@
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .iframe {
@@ -79,11 +87,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>欢迎观看我的图片</h1>
+        <h1>微博热度赛跑图</h1>
         <div class="iframe-container">
             <!-- 请将 "图片链接" 替换为实际的图片链接 -->
-            <iframe src="https://dycharts.com/xshow/index.html?id=c_b268b7e99f9a0809fad8a5638e604c93" width="600" height="510" scrolling="no" frameborder="0" align="">
-            </iframe>
+            <iframe src="https://dycharts.com/xshow/index.html?id=c_b268b7e99f9a0809fad8a5638e604c93" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
         </div>
         <button onclick="toggleIframe()">显示/隐藏图片</button>
     </div>
