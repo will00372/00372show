@@ -33,6 +33,9 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
+            resize: vertical; /* 允许垂直调整大小 */
+            height: 90vh; /* 设置为视窗的90% */
+            max-height: 1000px; /* 设置最大高度，防止过长 */
         }
 
         /* 标题样式 */
@@ -42,17 +45,19 @@
             margin-bottom: 20px;
             color: #ffcc00;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            flex-shrink: 0; /* 防止标题被压缩 */
         }
 
         /* iframe容器 */
         .iframe-container {
             width: 100%;
-            height: 90vh;  /* 调整为页面高度的90% */
-            max-height: 1000px; /* 设置最大高度，防止过长 */
+            flex-grow: 1; /* 使iframe容器填充剩余空间 */
             border-radius: 15px;
             overflow: hidden;
             margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            resize: vertical; /* 允许垂直调整大小 */
+            max-height: calc(100vh - 180px); /* 保证iframe最大高度不超过页面 */
         }
 
         iframe {
