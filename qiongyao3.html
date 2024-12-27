@@ -33,7 +33,6 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-            resize: vertical; /* 允许垂直调整大小 */
             height: 90vh; /* 设置为视窗的90% */
             max-height: 1000px; /* 设置最大高度，防止过长 */
         }
@@ -51,19 +50,19 @@
         /* iframe容器 */
         .iframe-container {
             width: 100%;
-            flex-grow: 1; /* 使iframe容器填充剩余空间 */
-            border-radius: 15px;
-            overflow: hidden;
+            height: 100%; /* 保证 iframe-container 填充父容器的剩余空间 */
             margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            resize: vertical; /* 允许垂直调整大小 */
-            max-height: calc(100vh - 120px); /* 将最大高度改为原来的一倍 */
+            border-radius: 15px;
+            overflow: hidden;
+            resize: none; /* 禁止容器调整大小 */
         }
 
         iframe {
             width: 100%;
             height: 100%;  /* 让iframe填满父容器 */
             border: none;
+            display: block; /* 使iframe成为块级元素，去除底部空白 */
         }
 
         /* 按钮样式 */
