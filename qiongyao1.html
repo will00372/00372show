@@ -47,15 +47,15 @@
 
         /* iframe容器 */
         .iframe-container {
-            width: 100%;
-            max-width: 1000px; /* 设置最大宽度，防止过宽 */
-            margin: 0 auto;
             position: relative;
+            width: 100%;
+            max-width: 1000px; /* 最大宽度 */
+            margin: 0 auto;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            padding-bottom: 56.25%; /* 保持16:9的比例 */
-            height: 0; /* 通过 padding-bottom 设置高度 */
+            padding-bottom: 56.25%; /* 16:9比例 */
+            height: 0;
         }
 
         /* iframe样式 */
@@ -84,8 +84,7 @@
             }
 
             .iframe-container {
-                max-width: 100%;
-                padding-bottom: 56.25%; /* 仍保持16:9比例 */
+                padding-bottom: 56.25%; /* 保持16:9比例 */
             }
 
             .iframe {
