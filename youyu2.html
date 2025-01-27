@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情绪饼图 - 鱿鱼游戏第二季</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url('youyu2.png'); /* 背景图 */
+            background-size: cover;
+            background-position: center;
+            color: white; /* 白色字体，更好地与背景对比 */
+        }
+        canvas {
+            max-width: 500px;
+            margin: auto;
+        }
+        .info-box {
+            margin-top: 20px;
+            display: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+            border-radius: 5px;
+            color: white;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #FF5722; /* 按钮颜色 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #E64A19; /* 按钮悬停效果 */
+        }
+    </style>
+</head>
+<body>
+    <h2>鱿鱼游戏观众短评情绪分析</h2>
+    <canvas id="emotionChart"></canvas>
+    <div class="info-box" id="infoBox"></div>
+
+    <!-- 返回按钮 -->
+    <button class="btn" onclick="window.history.back()">返回上一页</button>
+
+    <script>
+        const data = {
+            labels: ['积极情绪', '中性情绪', '消极情绪'],
+            datasets: [{
+                data: [78, 16, 34],
+                backgroundColor: ['#4CAF50', '#FFEB3B', '#F44336'],
+                hoverOffset: 4
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        enabled: true,
+                    },
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                onClick: (event, activeElements) => {
+                    const chart = activeElements[0]?.element.chart;
+                    if (activeElements.length > 0) {
+                        const label = chart.data.labels[activeElements[0].index];
+                        const value = chart.data.datasets[0].data[activeElements[0].index];
+                        const percentage = ((value / chart.data.datasets[0]._meta[0].total) * 100).toFixed(2);
+
+                        const infoBox = document.getElementById('infoBox');
+                        infoBox.style.display = 'block';
+                        infoBox.innerHTML = `<strong>${label}:</strong><br>
+                                             数量: ${value} 条<br>
+                                             百分比: ${percentage}%`;
+                    }
+                }
+            }
+        };
+
+        const emotionChart = new Chart(
+            document.getElementById('emotionChart'),
+            config
+        );
+    </script>
+</body>
+</html>
